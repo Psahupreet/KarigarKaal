@@ -8,7 +8,7 @@ export default function MyOrders() {
   const fetchOrders = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://82.29.165.206:5000/api/orders/my-orders", {
+      const response = await axios.get("http://82.29.165.206:7002/api/orders/my-orders", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -32,7 +32,7 @@ export default function MyOrders() {
 
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://82.29.165.206:5000/api/orders/${id}`, {
+      await axios.delete(`http://82.29.165.206:7002/api/orders/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

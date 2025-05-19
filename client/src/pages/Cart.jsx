@@ -77,7 +77,7 @@ export default function Cart() {
 
     try {
       await axios.post(
-        "http://82.29.165.206:5000/api/orders/place",
+        "http://82.29.165.206:7002/api/orders/place",
         {
           items: cartItems,
           totalAmount: total,

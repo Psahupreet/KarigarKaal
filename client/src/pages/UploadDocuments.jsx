@@ -14,7 +14,7 @@ export default function UploadDocuments() {
   useEffect(() => {
     const interval = setInterval(() => {
       axios
-        .get("http://82.29.165.206:5000/api/partners/check-documents", {
+        .get("http://82.29.165.206:7002/api/partners/check-documents", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => {
@@ -52,7 +52,7 @@ export default function UploadDocuments() {
     Object.entries(formData).forEach(([key, val]) => form.append(key, val));
 
     try {
-      await axios.post("http://82.29.165.206:5000/api/partners/upload-documents", form, {
+      await axios.post("http://82.29.165.206:7002/api/partners/upload-documents", form, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,

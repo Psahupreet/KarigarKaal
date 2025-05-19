@@ -8,7 +8,7 @@ export default function ProductList() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get("http://82.29.165.206:5000/api/products")
+    axios.get("http://82.29.165.206:7002/api/products")
       .then((res) => {
         setProducts(res.data);
         setIsLoading(false);

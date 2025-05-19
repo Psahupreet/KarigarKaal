@@ -17,7 +17,7 @@ export default function ProductDetails() {
 
   useEffect(() => {
     axios
-      .get(`http://82.29.165.206:5000/api/products/${id}`)
+      .get(`http://82.29.165.206:7002/api/products/${id}`)
       .then((res) => {
         setProduct(res.data);
         setIsLoading(false);
