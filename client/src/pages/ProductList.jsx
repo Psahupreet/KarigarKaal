@@ -8,7 +8,7 @@ export default function ProductList() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get("http://82.29.165.206:7001/api/products")
+    axios.get("http://82.29.165.206:7000/api/products")
       .then((res) => {
     console.log("Fetched Products:", res.data);
     setProducts(Array.isArray(res.data) ? res.data : res.data.products || []);
@@ -81,7 +81,7 @@ export default function ProductList() {
             >
               <div className="relative h-40 sm:h-48 overflow-hidden">
                 <img
-                  src={`http://localhost:5000/uploads/${product.images[0]}`}
+                  src={`http://82.29.165.206:7000/uploads/${product.images[0]}`}
                   alt={product.name}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   onError={(e) => {

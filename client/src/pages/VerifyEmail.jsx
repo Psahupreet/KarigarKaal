@@ -11,7 +11,7 @@ export default function VerifyEmail() {
   const handleVerify = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://82.29.165.206:7001/api/auth/verify-email", {
+      await axios.post("http://82.29.165.206:7000/api/auth/verify-email", {
         email,
         verificationCode: code
       });

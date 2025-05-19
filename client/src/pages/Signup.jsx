@@ -14,7 +14,7 @@ export default function Signup() {
     setError("");
     
     try {
-      await axios.post("http://82.29.165.206:7001/api/auth/signup", form);
+      await axios.post("http://82.29.165.206:7000/api/auth/signup", form);
       navigate("/verify-email", { state: { email: form.email } });
     } catch (err) {
       console.error(err);
