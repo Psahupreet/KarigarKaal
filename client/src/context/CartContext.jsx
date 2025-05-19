@@ -14,7 +14,7 @@ export const CartProvider = ({ children }) => {
       return;
     }
     try {
-      const res = await axios.get("http://82.29.165.206:7002/api/cart", {
+      const res = await axios.get("http://82.29.165.206:7001/api/cart", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCartItems(res.data.items || []);
@@ -28,7 +28,7 @@ export const CartProvider = ({ children }) => {
     if (!token) return;
     try {
       await axios.put(
-        "http://82.29.165.206:7002/api/cart",
+        "http://82.29.165.206:7001/api/cart",
         { items },
         {
           headers: { Authorization: `Bearer ${token}` },

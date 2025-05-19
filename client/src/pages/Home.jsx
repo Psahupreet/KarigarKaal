@@ -7,7 +7,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("http://82.29.165.206:7002/api/services/popular")
+    axios.get("http://82.29.165.206:7001/api/services/popular")
       .then(res => {
         setServices(res.data);
         setIsLoading(false);

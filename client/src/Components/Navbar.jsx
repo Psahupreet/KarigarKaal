@@ -27,7 +27,7 @@ export default function Navbar() {
             const address = data?.display_name?.split(",")[0] || "Your Location";
             setLocation(address);
             await axios.put(
-              "http://82.29.165.206:7002/api/users/location",
+              "http://82.29.165.206:7001/api/users/location",
               { location: address },
               { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
             );
@@ -59,7 +59,7 @@ export default function Navbar() {
       try {
         setLocation(newLocation);
         await axios.put(
-          "http://82.29.165.206:7002/api/users/location",
+          "http://82.29.165.206:7001/api/users/location",
           { location: newLocation },
           { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
         );

@@ -29,10 +29,10 @@ export default function PartnerDashboard() {
     const fetchDashboardData = async () => {
       try {
         const [statsRes, ordersRes] = await Promise.all([
-          axios.get("http://82.29.165.206:7002/api/partners/dashboard-stats", {
+          axios.get("http://82.29.165.206:7001/api/partners/dashboard-stats", {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get("http://82.29.165.206:7002/api/partners/my-orders", {
+          axios.get("http://82.29.165.206:7001/api/partners/my-orders", {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);

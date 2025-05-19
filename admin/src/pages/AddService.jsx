@@ -33,7 +33,7 @@ export default function AddService() {
     });
 
     try {
-      await axios.post("http://82.29.165.206:7002/api/products", formData, {
+      await axios.post("http://82.29.165.206:7001/api/products", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       alert("✅ Service added successfully!");

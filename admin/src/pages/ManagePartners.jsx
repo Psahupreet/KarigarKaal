@@ -16,7 +16,7 @@ export default function ManagePartners() {
   const fetchPartners = async () => {
     try {
       setIsLoading(true);
-      const res = await axios.get("http://82.29.165.206:7002/api/partners");
+      const res = await axios.get("http://82.29.165.206:7001/api/partners");
       setPartners(res.data);
       setFilteredPartners(res.data);
     } catch (err) {
@@ -32,7 +32,7 @@ export default function ManagePartners() {
 
     try {
       setIsDeleting(true);
-      await axios.delete(`http://82.29.165.206:7002/api/partners/${id}`);
+      await axios.delete(`http://82.29.165.206:7001/api/partners/${id}`);
       const updated = partners.filter((partner) => partner._id !== id);
       setPartners(updated);
       setFilteredPartners(updated);
