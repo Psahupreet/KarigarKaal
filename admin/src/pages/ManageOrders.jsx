@@ -17,7 +17,7 @@ export default function ManageOrders() {
       }
 
       try {
-        const res = await axios.get("http://localhost:5000/api/orders/AllOrders", {
+        const res = await axios.get("http://82.29.165.206:5000/api/orders/AllOrders", {
           headers: { Authorization: `Bearer ${token}` },
         });
 

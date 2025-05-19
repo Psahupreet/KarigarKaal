@@ -6,7 +6,7 @@ export default function ManageProducts() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/products")
+    axios.get("http://82.29.165.206:5000/api/products")
       .then((res) => {
         setProducts(res.data);
         setIsLoading(false);
@@ -16,7 +16,7 @@ export default function ManageProducts() {
 
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
-      await axios.delete(`http://localhost:5000/api/products/${id}`);
+      await axios.delete(`http://82.29.165.206:5000/api/products/${id}`);
       setProducts(products.filter(p => p._id !== id));
     }
   };

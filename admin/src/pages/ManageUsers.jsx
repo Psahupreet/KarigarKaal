@@ -6,7 +6,7 @@ export default function ManageUsers() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/users")
+    axios.get("http://82.29.165.206:5000/api/users")
       .then((res) => {
         setUsers(res.data);
         setIsLoading(false);

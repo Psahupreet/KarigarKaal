@@ -12,7 +12,7 @@ export default function PartnerDocuments() {
   const fetchPartners = () => {
     setIsLoading(true);
     axios
-      .get("http://localhost:5000/api/admin/partner-documents", { withCredentials: true })
+      .get("http://82.29.165.206:5000/api/admin/partner-documents", { withCredentials: true })
       .then((res) => setPartners(res.data))
       .catch((err) => {
         console.error("Error fetching documents:", err);
@@ -27,8 +27,8 @@ export default function PartnerDocuments() {
 
       const endpoint =
         action === "verify"
-          ? `http://localhost:5000/api/admin/partners/${partnerId}/verify`
-          : `http://localhost:5000/api/admin/partners/${partnerId}/decline`;
+          ? `http://82.29.165.206:5000/api/admin/partners/${partnerId}/verify`
+          : `http://82.29.165.206:5000/api/admin/partners/${partnerId}/decline`;
 
       await axios.post(
         endpoint,

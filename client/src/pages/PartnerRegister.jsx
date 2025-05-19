@@ -22,7 +22,7 @@ export default function PartnerRegister() {
     try {
       setIsLoading(true);
       setError("");
-      await axios.post("http://localhost:5000/api/partners/register", form, { 
+      await axios.post("http://82.29.165.206:5000/api/partners/register", form, { 
         withCredentials: true 
       });
       setStep(2);
@@ -38,7 +38,7 @@ export default function PartnerRegister() {
     try {
       setIsLoading(true);
       setError("");
-      await axios.post("http://localhost:5000/api/partners/verify", {
+      await axios.post("http://82.29.165.206:5000/api/partners/verify", {
         email: form.email,
         otp: form.otp,
       }, { withCredentials: true });

@@ -10,7 +10,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", form);
+      const res = await axios.post("http://82.29.165.206:5000/api/auth/login", form);
       const { token, user } = res.data;
       // console.log(token,res)
 
