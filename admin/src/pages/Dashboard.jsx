@@ -25,7 +25,7 @@ export default function Dashboard() {
   const fetchStats = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:6000/api/dashboard/stats");
+      const res = await axios.get("http://localhost:5000/api/dashboard/stats");
       setStats(res.data);
       setLastUpdated(new Date());
     } catch (err) {

@@ -12,7 +12,7 @@ export default function PartnerDocuments() {
   const fetchPartners = () => {
     setIsLoading(true);
     axios
-      .get("http://localhost:6000/api/admin/partner-documents", { withCredentials: true })
+      .get("http://localhost:5000/api/admin/partner-documents", { withCredentials: true })
       .then((res) => setPartners(res.data))
       .catch((err) => {
         console.error("Error fetching documents:", err);
@@ -27,8 +27,8 @@ export default function PartnerDocuments() {
 
       const endpoint =
         action === "verify"
-          ? `http://localhost:6000/api/admin/partners/${partnerId}/verify`
-          : `http://localhost:6000/api/admin/partners/${partnerId}/decline`;
+          ? `http://localhost:5000/api/admin/partners/${partnerId}/verify`
+          : `http://localhost:5000/api/admin/partners/${partnerId}/decline`;
 
       await axios.post(
         endpoint,
@@ -84,7 +84,7 @@ export default function PartnerDocuments() {
                     <div key={key} className="flex flex-col">
                       <span className="font-semibold capitalize">{key.replace(/([A-Z])/g, " $1")}:</span>
                       <a 
-                        href={`http://localhost:6000/${url}`} 
+                        href={`http://localhost:5000/${url}`} 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         className="text-indigo-600 hover:text-indigo-800 underline truncate"

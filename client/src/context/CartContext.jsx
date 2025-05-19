@@ -14,7 +14,7 @@ export const CartProvider = ({ children }) => {
       return;
     }
     try {
-      const res = await axios.get("http://localhost:6000/api/cart", {
+      const res = await axios.get("http://localhost:5000/api/cart", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCartItems(res.data.items || []);
@@ -28,7 +28,7 @@ export const CartProvider = ({ children }) => {
     if (!token) return;
     try {
       await axios.put(
-        "http://localhost:6000/api/cart",
+        "http://localhost:5000/api/cart",
         { items },
         {
           headers: { Authorization: `Bearer ${token}` },

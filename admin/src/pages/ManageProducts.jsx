@@ -6,7 +6,7 @@ export default function ManageProducts() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("http://localhost:6000/api/products")
+    axios.get("http://localhost:5000/api/products")
       .then((res) => {
         setProducts(res.data);
         setIsLoading(false);
@@ -16,7 +16,7 @@ export default function ManageProducts() {
 
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
-      await axios.delete(`http://localhost:6000/api/products/${id}`);
+      await axios.delete(`http://localhost:5000/api/products/${id}`);
       setProducts(products.filter(p => p._id !== id));
     }
   };
@@ -55,7 +55,7 @@ export default function ManageProducts() {
             <div key={product._id} className="bg-white rounded-lg sm:rounded-xl shadow-sm sm:shadow-md overflow-hidden border border-gray-100 hover:shadow-md sm:hover:shadow-lg transition-shadow duration-300">
               <div className="relative h-40 sm:h-48 overflow-hidden">
                 <img
-                  src={`http://localhost:6000/uploads/${product.images[0]}`}
+                  src={`http://localhost:5000/uploads/${product.images[0]}`}
                   alt={product.name}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   onError={(e) => {

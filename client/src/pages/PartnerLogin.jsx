@@ -15,7 +15,7 @@ export default function PartnerLogin() {
     try {
       setIsLoading(true);
       setError("");
-      await axios.post("http://localhost:6000/api/partners/send-login-otp", { email }, { withCredentials: true });
+      await axios.post("http://localhost:5000/api/partners/send-login-otp", { email }, { withCredentials: true });
       setStep(2);
     } catch (err) {
       setError(err.response?.data?.message || "Failed to send OTP. Please try again.");
@@ -30,7 +30,7 @@ export default function PartnerLogin() {
       setIsLoading(true);
       setError("");
       const res = await axios.post(
-        "http://localhost:6000/api/partners/verify-login-otp",
+        "http://localhost:5000/api/partners/verify-login-otp",
         { email, otp },
         { withCredentials: true }
       );

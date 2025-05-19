@@ -25,7 +25,7 @@ import bodyParser from 'body-parser';
 
 dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT || 5000;
 
 // For ES modules __dirname workaround
 const __filename = fileURLToPath(import.meta.url);

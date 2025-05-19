@@ -8,7 +8,7 @@ export default function ProductList() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:6000/api/products")
+    axios.get("http://localhost:5000/api/products")
       .then((res) => {
         setProducts(res.data);
         setIsLoading(false);
@@ -79,7 +79,7 @@ export default function ProductList() {
             >
               <div className="relative h-40 sm:h-48 overflow-hidden">
                 <img
-                  src={`http://localhost:6000/uploads/${product.images[0]}`}
+                  src={`http://localhost:5000/uploads/${product.images[0]}`}
                   alt={product.name}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   onError={(e) => {

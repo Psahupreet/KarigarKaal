@@ -14,7 +14,7 @@ export default function Signup() {
     setError("");
     
     try {
-      await axios.post("http://localhost:6000/api/auth/signup", form);
+      await axios.post("http://localhost:5000/api/auth/signup", form);
       navigate("/verify-email", { state: { email: form.email } });
     } catch (err) {
       console.error(err);

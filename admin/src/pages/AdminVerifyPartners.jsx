@@ -15,7 +15,7 @@ export default function AdminVerifyPartners() {
   const fetchPartners = async () => {
     try {
       setIsLoading(true);
-      const { data } = await axios.get("http://localhost:6000/api/admin/partners-by-status", { 
+      const { data } = await axios.get("http://localhost:5000/api/admin/partners-by-status", { 
         withCredentials: true 
       });
       setPartners(data);
@@ -33,7 +33,7 @@ export default function AdminVerifyPartners() {
   const handlePartnerAction = async (id, action) => {
     try {
       setIsProcessing(true);
-      await axios.put(`http://localhost:6000/api/admin/${action}-partner/${id}`);
+      await axios.put(`http://localhost:5000/api/admin/${action}-partner/${id}`);
       await fetchPartners();
     } catch (error) {
       console.error(`Error ${action}ing partner:`, error);
