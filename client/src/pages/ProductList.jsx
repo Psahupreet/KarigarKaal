@@ -10,9 +10,11 @@ export default function ProductList() {
   useEffect(() => {
     axios.get("http://82.29.165.206:7001/api/products")
       .then((res) => {
-        setProducts(res.data);
-        setIsLoading(false);
-      })
+    console.log("Fetched Products:", res.data);
+    setProducts(Array.isArray(res.data) ? res.data : res.data.products || []);
+    setIsLoading(false);
+  })
+
       .catch((err) => {
         console.error("Error fetching products:", err);
         setError("Failed to load services. Please try again later.");
