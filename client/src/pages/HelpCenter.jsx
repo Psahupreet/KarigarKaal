@@ -23,7 +23,7 @@ export default function HelpCenter() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://82.29.165.206:7000/api/help/submit", formData);
+      await axios.post("http://localhost:8080/api/help/submit", formData);
       setIsSubmitted(true);
       setFormData({
         name: '',
@@ -33,7 +33,7 @@ export default function HelpCenter() {
         message: ''
       });
   
-      setTimeout(() => setIsSubmitted(false), 5000);
+      setTimeout(() => setIsSubmitted(false), 8080);
     } catch (error) {
       console.error("❌ Submission failed", error);
       alert("Failed to submit help request. Please try again later.");

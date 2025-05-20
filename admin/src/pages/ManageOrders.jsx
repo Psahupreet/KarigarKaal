@@ -17,7 +17,7 @@ export default function ManageOrders() {
       }
 
       try {
-        const res = await axios.get("http://82.29.165.206:7000/api/orders/AllOrders", {
+        const res = await axios.get("http://localhost:8080/api/orders/AllOrders", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -99,7 +99,7 @@ export default function ManageOrders() {
                       {order.items.map((item, idx) => (
                         <div key={idx} className="flex gap-2 md:gap-3 items-center border p-2 rounded-md bg-gray-50">
                           <img
-                            src={`http://localhost:5000/uploads/${item.imageUrl}`}
+                            src={`http://localhost:8080/uploads/${item.imageUrl}`}
                             alt={item.title}
                             className="w-10 h-10 md:w-12 md:h-12 object-cover rounded"
                           />

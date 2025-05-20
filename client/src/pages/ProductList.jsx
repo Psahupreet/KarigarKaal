@@ -8,13 +8,11 @@ export default function ProductList() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get("http://82.29.165.206:7000/api/products")
+    axios.get("http://localhost:8080/api/products")
       .then((res) => {
-    console.log("Fetched Products:", res.data);
-    setProducts(Array.isArray(res.data) ? res.data : res.data.products || []);
-    setIsLoading(false);
-  })
-
+        setProducts(res.data);
+        setIsLoading(false);
+      })
       .catch((err) => {
         console.error("Error fetching products:", err);
         setError("Failed to load services. Please try again later.");
@@ -81,7 +79,7 @@ export default function ProductList() {
             >
               <div className="relative h-40 sm:h-48 overflow-hidden">
                 <img
-                  src={`http://82.29.165.206:7000/uploads/${product.images[0]}`}
+                  src={`http://localhost:8080/uploads/${product.images[0]}`}
                   alt={product.name}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   onError={(e) => {

@@ -38,7 +38,7 @@ export default function PartnerNavbar() {
     }
 
     axios
-      .get("http://82.29.165.206:7000/api/partners/check-documents", {
+      .get("http://localhost:8080/api/partners/check-documents", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
