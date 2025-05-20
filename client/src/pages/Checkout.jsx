@@ -215,6 +215,6 @@ export default Checkout
 
 
 
-// http://localhost:5173/upload-documents                           
+// http://82.29.165.206:5173/upload-documents                           
 1// after this page I want the the Partner dashboard page in this page they can see the partner job id  and they can see the total no of orders , pending order ,  cancle order , and they can also see the todays order and they also see the total earning, todays earning, tips , First time customers and return customers and they can see there name and the logout button also while click on the button they can logout   
 2// upload documentation process i want to verify the partners means in the partner documents page in admin i want 2 buttons verify or decline when i click on the verify then partner can see the full 

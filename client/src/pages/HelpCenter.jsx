@@ -23,7 +23,7 @@ export default function HelpCenter() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8080/api/help/submit", formData);
+      await axios.post("http://82.29.165.206:8080/api/help/submit", formData);
       setIsSubmitted(true);
       setFormData({
         name: '',

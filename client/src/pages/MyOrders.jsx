@@ -8,7 +8,7 @@ export default function MyOrders() {
   const fetchOrders = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:8080/api/orders/my-orders", {
+      const response = await axios.get("http://82.29.165.206:8080/api/orders/my-orders", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -32,7 +32,7 @@ export default function MyOrders() {
 
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:8080/api/orders/${id}`, {
+      await axios.delete(`http://82.29.165.206:8080/api/orders/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -131,7 +131,7 @@ export default function MyOrders() {
                   {order.items?.map((item, idx) => (
                     <div key={idx} className="flex items-center gap-3 border p-2 rounded-lg hover:bg-gray-50 transition-colors">
                       <img
-                        src={`http://localhost:8080/uploads/${item.imageUrl}`}
+                        src={`http://82.29.165.206:8080/uploads/${item.imageUrl}`}
                         className="w-10 h-10 sm:w-12 sm:h-12 object-cover rounded"
                         alt={item.title}
                         onError={(e) => {

@@ -17,7 +17,7 @@ export default function ProductDetails() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/api/products/${id}`)
+      .get(`http://82.29.165.206:8080/api/products/${id}`)
       .then((res) => {
         setProduct(res.data);
         setIsLoading(false);
@@ -93,10 +93,10 @@ export default function ProductDetails() {
         <div>
           <div className="mb-3 sm:mb-4 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg">
             <img
-              src={`http://localhost:8080/uploads/${product.images[mainImage]}`}
+              src={`http://82.29.165.206:8080/uploads/${product.images[mainImage]}`}
               alt={product.name}
               className="w-full h-64 sm:h-80 md:h-96 object-cover cursor-pointer"
-              onClick={() => window.open(`http://localhost:8080/uploads/${product.images[mainImage]}`, '_blank')}
+              onClick={() => window.open(`http://82.29.165.206:8080/uploads/${product.images[mainImage]}`, '_blank')}
             />
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
@@ -107,7 +107,7 @@ export default function ProductDetails() {
                 onClick={() => setMainImage(index)}
               >
                 <img
-                  src={`http://localhost:8080/uploads/${img}`}
+                  src={`http://82.29.165.206:8080/uploads/${img}`}
                   alt={`${product.name} ${index + 1}`}
                   className="w-full h-20 sm:h-24 md:h-28 object-cover"
                 />

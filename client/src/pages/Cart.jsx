@@ -77,7 +77,7 @@ export default function Cart() {
 
     try {
       await axios.post(
-        "http://localhost:8080/api/orders/place",
+        "http://82.29.165.206:8080/api/orders/place",
         {
           items: cartItems,
           totalAmount: total,
@@ -136,7 +136,7 @@ export default function Cart() {
             className="flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white p-4 rounded-lg shadow-sm border border-gray-200"
           >
             <img
-              src={`http://localhost:8080/uploads/${item.imageUrl}`}
+              src={`http://82.29.165.206:8080/uploads/${item.imageUrl}`}
               alt={item.title}
               className="w-full sm:w-20 h-20 object-cover rounded-lg"
             />

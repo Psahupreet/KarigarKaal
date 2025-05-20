@@ -31,7 +31,7 @@ const PORT = process.env.PORT || 8080;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const allowedOrigins = ["http://localhost:4174", "http://localhost:4173"];
+const allowedOrigins = ['http://82.29.165.206:4173', 'http://82.29.165.206:4174'];
 
 app.use(
   cors({
@@ -69,4 +69,7 @@ app.get('/', (req, res) => {
   res.send('API is running...');
 });
 
-app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+// app.listen(PORT, () => console.log(`🚀 Server running on http://82.29.165.206:${PORT}`));
+app.listen(8080, '0.0.0.0', () => {
+  console.log('Server running on http://0.0.0.0:8080');
+});
